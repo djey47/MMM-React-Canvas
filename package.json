@@ -1,0 +1,83 @@
+{
+  "name": "MMM-React-Canvas",
+  "version": "1.0.0",
+  "description": "MagicMirror2 module template using React library",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djey47/MMM-React-Canvas"
+  },
+  "keywords": [
+    "magic mirror",
+    "module template",
+    "react"
+  ],
+  "author": "djey47",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djey47/MMM-React-Canvas/issues"
+  },
+  "homepage": "https://github.com/djey47/MMM-React-Canvas#readme",
+  "scripts": {
+    "install": "npm run build-prod",
+    "build:module": "webpack --config tools/webpack/webpack.config.module.js",
+    "build:module-prod": "webpack -p --config tools/webpack/webpack.config.module.js",
+    "build:helper": "webpack --config tools/webpack/webpack.config.helper.js",
+    "build:helper-prod": "webpack -p --config tools/webpack/webpack.config.helper.js",
+    "build": "npm run build:module && npm run build:helper",
+    "build-prod": "npm run build:module-prod && npm run build:helper-prod",
+    "analyze:module": "npm run build:module && npx webpack-bundle-analyzer stats.json .",
+    "analyze:helper": "npm run build:helper && npx webpack-bundle-analyzer stats.json .",
+    "lint": "npm run lint:styles && npm run lint:scripts",
+    "lint:scripts": "eslint src && npx flow",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
+    "flow:typings": "npx flow-typed update",
+    "test": "npx jest -- --config ./tools/test/jest.default.json",
+    "jest:watch:module": "npx jest -- --config ./tools/test/jest.client.json --watch",
+    "jest:watch:helper": "npx jest -- --config ./tools/test/jest.server.json --watch",
+    "jest:watch": "npx jest -- --config ./tools/test/jest.default.json --watch",
+    "precommit": "npm run lint",
+    "prepush": "npm run test"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.11",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-forge": "latest",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "app-root-dir": "^1.0.2",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^2.0.0",
+    "eslint": "^5.10.0",
+    "eslint-plugin-flowtype": "^3.2.0",
+    "eslint-plugin-react": "^7.11.1",
+    "flow-bin": "^0.88.0",
+    "flow-typed": "^2.5.1",
+    "husky": "^1.2.0",
+    "jest": "^23.6.0",
+    "node-sass": "^4.11.0",
+    "react-test-renderer": "^16.6.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "stylelint": "^9.9.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-selector-bem-pattern": "^2.0.0",
+    "webpack": "^4.27.1",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2"
+  }
+}
