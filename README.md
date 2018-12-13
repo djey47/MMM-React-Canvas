@@ -6,7 +6,11 @@ MichMich's MagicMirror2 module template for convenient development with ES6 lang
 
 # Presentation and features
 
-TBD
+## Highlights
+### Full React support (16.6 as now)
+
+## Useful toolings
+### Interactive dependency upgrades (thanks to *npm-check* module): `npm run upgrade-interactive`
 
 # Install
 
