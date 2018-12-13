@@ -2,12 +2,16 @@
 
 const { outputPath, commonRules, commonPlugins } = require('./webpack.config.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const devMode = process.env.NODE_ENV !== 'production';
+const EditJsonFile = require('edit-json-file');
+const appRootPath = require('app-root-dir').get();
+
+const isDevMode = process.env.NODE_ENV !== 'production';
+const packageFile = EditJsonFile(`${appRootPath}/package.json`);
 
 module.exports = {
   entry: './src/client/module.js',
   output: {
-    filename: 'MMM-React-Canvas.js',
+    filename: `${packageFile.get('name')}.js`,
     path: outputPath,
   },
   module: {
@@ -15,7 +19,7 @@ module.exports = {
       test: /\.(css|scss)$/,
       exclude: /(node_modules)/,
       use: [
-        devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+        isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
         'css-loader',
         'sass-loader',
       ],      
@@ -25,8 +29,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      filename: isDevMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: isDevMode ? '[id].css' : '[id].[hash].css',
     }),
   ]),
 };

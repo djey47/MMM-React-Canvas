@@ -38,7 +38,8 @@
     "jest:watch": "npx jest -- --config ./tools/test/jest.default.json --watch",
     "precommit": "npm run lint",
     "prepush": "npm run test",
-    "upgrade-interactive": "npm-check --update"
+    "upgrade-interactive": "npm-check --update",
+    "init:mmm": "node tools/scripts/init-mmm.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

@@ -7,10 +7,14 @@ MichMich's MagicMirror2 module template for convenient development with ES6 lang
 # Presentation and features
 
 ## Highlights
+### ES6 support for modern language facilities
 ### Full React support (16.6 as now)
+### Type checking with flow
+### SASS support (.scss files)
 
 ## Useful toolings
 ### Interactive dependency upgrades (thanks to *npm-check* module): `npm run upgrade-interactive`
+### Code linting: ESLint, Stylelint
 
 # Install
 
