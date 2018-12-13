@@ -14,12 +14,14 @@ MichMich's MagicMirror2 module template for convenient development with ES6 lang
 
 ## Useful toolings
 ### Interactive dependency upgrades (thanks to *npm-check* module): `npm run upgrade-interactive`
-### Code linting: ESLint, Stylelint
+### Code linting: ESLint, Stylelint: `npm run lint`
+### Secure Git Hooks at pre-commit and pre-push stages (can be ignored with `--no-verify` switch, but will threaten dozens of kittens...)
 
 # Install
 
-1. Clone repository into `/modules/` inside your MagicMirror folder
-2. Make changes required with your own module (e.g renaming directory and references to MMM-React-Canvas to MMM-YOUR-MODULE)
-3. Run `npm install` inside `/modules/MMM-YOUR-MODULE/` folder
-4. Check that `MMM-YOUR-MODULE.js` and `node_helper.js` scripts have been created into current folder
-5. Add the module to the MagicMirror config.
+1. Clone repository into `/modules/` inside your MagicMirror folder, with proper module name as directory (git clone to directory MMM-YOUR-MODULE)
+2. Run `npm install` inside `/modules/MMM-YOUR-MODULE/` folder
+3. Run `npm run init:mmm MMM-YOUR-MODULE`, it will automatically set up package.json for you
+4. Run `npm run build`
+5. Check that `MMM-YOUR-MODULE.js` and `node_helper.js` scripts have been created into current folder
+6. Add the module to the MagicMirror config.
