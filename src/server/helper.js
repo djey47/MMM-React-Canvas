@@ -1,6 +1,7 @@
 /* @flow */
 
-/* Magic Mirror
+/**
+ * Magic Mirror
  * Server side part of module.
  */
 

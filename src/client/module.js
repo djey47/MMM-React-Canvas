@@ -6,37 +6,31 @@
  */
 
 import * as Notifications from '../support/notifications';
-import EditJsonFile from 'edit-json-file';
-import AppRootDir from 'app-root-dir';
 import {
   renderWrapper,
   renderMainComponent,
 } from './dom/renderer';
 
 /**
- * @private
- * @return Official module name from package.json
+ * Custom MM2 module name
  */
-const getModuleName = (): string => {
-  const packageFile = EditJsonFile(`${AppRootDir.get()}/package.json`);
-  return packageFile.get('name');
-};
+const MODULE_NAME = 'MMM-React-Canvas';
 
 /**
  * @private
  * @return DIV Wrapper identifier
  */
 const getWrapperId = (): string => {
-  return `${getModuleName()}Wrapper`.replace('-','');
+  return `${MODULE_NAME}Wrapper`.replace('-','');
 };
 
-Module.register(getModuleName(),{
+Module.register(MODULE_NAME,{
   // Define module defaults
   defaults: {},
 
   /**
    * Defines required scripts.
-   */ 
+   */
   getStyles: function(): Array<string> {
     return [
       this.file('styles.css'),      // Webpack bundle
@@ -81,14 +75,14 @@ Module.register(getModuleName(),{
     if (this.config.debug) Log.info(`**${this.name} notificationReceived: ${notification}`);
 
     if (notification === Notifications.NOTIF_DOM_OBJECTS_CREATED) {
-      renderMainComponent(this.config);
+      renderMainComponent(getWrapperId());
       this.viewEngineStarted = true;
     }
   },
 
   /**
    * Intercepts server side events
-   */ 
+   */
   socketNotificationReceived: function(notification: string, payload: Object): void {
     if (this.config.debug) {
       Log.info(`**${this.name} socketNotificationReceived: ${notification}`);

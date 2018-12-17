@@ -8,10 +8,9 @@ import {
 /**
  * Magic Mirror
  * Custom NodeHelper implementation
- * ES6 module export does not work here...
  */
-module.exports = {
-  start: function () {
+export default {
+  start: function() {
     this.started = false;
   },
 
@@ -19,7 +18,7 @@ module.exports = {
     if (notification === NOTIF_SET_CONFIG && !this.started) {
       this.config = payload;
       this.started = true;
-      this.sendSocketNotification(NOTIF_INIT);      
+      this.sendSocketNotification(NOTIF_INIT);
     }
   },
 };
