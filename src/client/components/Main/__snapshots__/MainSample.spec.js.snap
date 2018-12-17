@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main sample component should render correctly at initial state 1`] = `
+<div
+  className="MainSample dimmed light small"
+>
+  <p
+    className="MainSample__description"
+  >
+    Main component sample for MM2's React template
+  </p>
+</div>
+`;

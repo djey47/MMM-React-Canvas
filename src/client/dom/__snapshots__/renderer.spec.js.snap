@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderWrapper function should return correct HTML 1`] = `
+<div
+  class="IDWrapper"
+  id="IDWrapper"
+/>
+`;
