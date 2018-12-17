@@ -1,2 +1,3 @@
 **/*.spec.js.snap
 flow-typed/
+tools/flow
