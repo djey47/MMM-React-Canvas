@@ -6,7 +6,7 @@ MichMich's MagicMirror2 module template for convenient development with ES6 lang
 
 # Presentation and features
 
-![ReactDevTools-Sample Component]()
+![ReactDevTools-Sample Component](https://github.com/djey47/MMM-React-Canvas/raw/master/docs/ReactDevTools-Sample%20Component.png)
 
 ## Highlights
 
