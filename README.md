@@ -31,6 +31,8 @@ thanks to *npm-check* module: `npm run upgrade-interactive`
 ### Code linting
 provides ESLint, Stylelint checks: `npm run lint`
 
+#### Stylelint checks for BEM syntax
+
 ### Unit tests
 with jest runtime: `npm test`, track source changes `npm run jest:watch`
 
