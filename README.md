@@ -6,6 +6,8 @@ MichMich's MagicMirror2 module template for convenient development with ES6 lang
 
 # Presentation and features
 
+![ReactDevTools-Sample Component]()
+
 ## Highlights
 
 ### ES6 support
@@ -44,6 +46,7 @@ at pre-commit and pre-push stages (can be ignored with `--no-verify` switch, but
 1. Clone repository into `/modules/` inside your MagicMirror folder, with proper module name as directory (git clone to directory MMM-YOUR-MODULE)
 2. Run `npm install` inside `/modules/MMM-YOUR-MODULE/` folder
 3. Run `npm run init:mmm MMM-YOUR-MODULE`, it will automatically set up package.json for you
-4. Run `npm run build`
-5. Check that `MMM-YOUR-MODULE.js` and `node_helper.js` scripts have been created into current folder
-6. Add the module to the MagicMirror config.
+4. Update `MODULE_NAME` value in `src/client/module.js` file to use MMM-YOUR-MODULE
+5. Run `npm run build`
+6. Check that `MMM-YOUR-MODULE.js`, `styles.css` and `node_helper.js` files have been created into current folder
+7. Add the module to the MagicMirror config.
