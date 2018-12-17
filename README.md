@@ -22,6 +22,9 @@ with flow runtime
 
 ## Useful toolings
 
+### Module / helper builds, in development and production
+handled by Webpack: `npm run build` or `npm run build-prod`
+
 ### Interactive dependency upgrades
 thanks to *npm-check* module: `npm run upgrade-interactive`
 

@@ -33,4 +33,8 @@ module.exports = {
       chunkFilename: isDevMode ? '[id].css' : '[id].[hash].css',
     }),
   ]),
+  node: {
+    // removes error when using fs in web environments, see https://github.com/webpack-contrib/css-loader/issues/447
+    fs: 'empty',
+  },
 };
