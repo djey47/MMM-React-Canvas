@@ -8,6 +8,8 @@ MichMich's MagicMirror2 module template for convenient development with ES6 lang
 
 ![ReactDevTools-Sample Component](https://github.com/djey47/MMM-React-Canvas/raw/master/docs/ReactDevTools-Sample%20Component.png)
 
+Module installation requires node *v14.16.1* and some of registered libs may not be compatible with most recent node versions. 
+
 ## Highlights
 
 ### ES6 support
