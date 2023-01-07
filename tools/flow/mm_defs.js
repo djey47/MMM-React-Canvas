@@ -12,7 +12,13 @@ declare var Module: {
 
 // MM2's integrated logging system
 declare var Log: {
-  info(message: string): void;
-  log(message: string): void;
-  error(message: string): void;
+  info(...data: any[]): void;
+  log(...data: any[]): void;
+  error(...data: any[]): void;
+};
+
+declare module logger {
+  declare function info(...data: any[]): void;
+  declare function log(...data: any[]): void;
+  declare function error(...data: any[]): void;
 };
