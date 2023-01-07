@@ -5,10 +5,23 @@
  * Server side part of module.
  */
 
-// $FlowFixMe: provided dependency (MM2)
-const NodeHelper = require('node_helper');
-
-const NodeHelperImpl = require('./helper_impl.js');
+const { Log, NodeHelper} = require('./mm2_facades');
+const { NOTIF_INIT, NOTIF_SET_CONFIG } = require('../support/notifications.js');
 
 // ES6 module export does not work here...
-module.exports = NodeHelper.create(NodeHelperImpl);
+module.exports = NodeHelper.create({
+  start: function() {
+    this.started = false;
+  },
+    
+  socketNotificationReceived: function(notification: string, payload: Object) {
+    Log.log('** helper:socketNotificationReceived', { notification, payload });
+    
+    if (notification === NOTIF_SET_CONFIG && !this.started) {
+      this.config = payload;
+      this.started = true;
+        
+      this.sendSocketNotification(NOTIF_INIT);
+    }
+  },    
+});

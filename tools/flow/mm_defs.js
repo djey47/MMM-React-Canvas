@@ -22,3 +22,7 @@ declare module logger {
   declare function log(...data: any[]): void;
   declare function error(...data: any[]): void;
 };
+
+declare module node_helper {
+  declare function create(helperImplementation: {}): {};
+};
