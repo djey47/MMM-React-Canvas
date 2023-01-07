@@ -47,6 +47,9 @@ Module.register(MODULE_NAME,{
     // Global state
     this.loaded = false;
     this.viewEngineStarted = false;
+
+    // Send configuration to helper
+    this.sendSocketNotification(Notifications.NOTIF_SET_CONFIG, this.config);
   },
 
   /**
